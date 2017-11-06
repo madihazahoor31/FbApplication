@@ -5,13 +5,63 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.mzshah.fbapplication.MainActivity">
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="141dp"
+        android:layout_y="319dp"
+        android:onClick="onRegisterNextClick"
+        android:text="NEXT"
+        tools:layout_editor_absoluteX="147dp"
+        tools:layout_editor_absoluteY="367dp" />
+
+    <EditText
+        android:id="@+id/phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="70dp"
+        android:layout_y="228dp"
+        android:ems="10"
+        android:inputType="phone"
+        tools:layout_editor_absoluteX="37dp"
+        tools:layout_editor_absoluteY="168dp" />
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="62dp"
+        android:layout_y="139dp"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:textColor="#000000"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="73dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="134dp"
+        android:layout_y="121dp"
+        android:text="Enter e-mail:" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="145dp"
+        android:layout_y="204dp"
+        android:text="enter phone" />
 
     <TextView
         android:id="@+id/textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_x="0dp"
-        android:text="Hello World!"
+        android:layout_x="184dp"
+        android:layout_y="414dp"
+        android:text="or!"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -22,8 +72,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_x="83dp"
-        android:layout_y="277dp"
+        android:layout_x="94dp"
+        android:layout_y="468dp"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="16dp" />
 </AbsoluteLayout>
