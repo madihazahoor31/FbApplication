@@ -1,6 +1,9 @@
 package com.example.mzshah.fbapplication;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
@@ -36,6 +39,8 @@ import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 
 import java.util.ArrayList;
+import com.facebook.FacebookSdk;
+import com.facebook.appevents.AppEventsLogger;
 
 public class MainActivity extends AppCompatActivity {
     TextView txtval;
@@ -83,11 +88,21 @@ public class MainActivity extends AppCompatActivity {
         }
     } private void askforotp() {
         Log.e("ERROR","reached at askforotp");
+        Boolean check=isNetworkAvailable();
 
-        new StoreDataAsyncTask().execute();
+        if(!check==Boolean.FALSE)
+            new StoreDataAsyncTask().execute();
+        else
+            Toast.makeText(this, "network not available", Toast.LENGTH_LONG).show();
         Log.e("ERROR","reached at progressdismiss");
-    }
 
+    }
+    private boolean isNetworkAvailable() {
+        ConnectivityManager connectivityManager
+                = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
+    }
     public class StoreDataAsyncTask extends AsyncTask<Void, Void, Void> {
         public StoreDataAsyncTask() {
         }
